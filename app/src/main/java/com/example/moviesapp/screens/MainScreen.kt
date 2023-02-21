@@ -30,7 +30,7 @@ fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
             .fillMaxSize()
     ) {
         LazyColumn(modifier = Modifier.padding(20.dp)) {
-            items(allMovies.take(10)) { item ->
+            items(allMovies) { item ->
                 MovieItem(item = item, navController = navController)
             }
         }
