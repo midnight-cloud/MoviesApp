@@ -32,7 +32,11 @@ fun SplashScreen(navController: NavController, viewModel: MainViewModel) {
         startAnimate = true
         viewModel.getAllMovies()
         delay(4000)
-        navController.navigate(Screens.Main.route)
+        navController.navigate(Screens.Main.route) {
+            popUpTo(Screens.Splash.route){
+                inclusive = true
+            }
+        }
     }
     Splash(alpha = alphaAnimation.value)
 }
